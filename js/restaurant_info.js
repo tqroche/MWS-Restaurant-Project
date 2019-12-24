@@ -15,7 +15,9 @@ initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
       console.error(error);
-    } else {      
+    } else {  
+      if(navigator.onLine) {
+        try {
       self.newMap = L.map('map', {
         center: [restaurant.latlng.lat, restaurant.latlng.lng],
         zoom: 16,
@@ -29,9 +31,19 @@ initMap = () => {
           'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox.streets'    
       }).addTo(newMap);
-      fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
-    }
+    } catch(error) {
+	  console.log("Map couldn't be initialized", error)	;	        
+	  
+	  DBHelper.mapOfflines();
+	}
+  }else {
+  
+   DBHelper.mapOffline();
+  } 
+
+      fillBreadcrumb();
+  }
   });
 }  
  
@@ -88,6 +100,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
+  image.alt = restaurant.alt;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
