@@ -16,14 +16,14 @@
 <body class="inside">
   <!-- Beginning header -->
   <header>
-  	<a href="#restaurant-name" class="skip-link"> Skip to main content</a>
+  	<a href="#restaurant-name" class="skip-link" tabindex="1"> Skip to main content</a>
   <!-- Beginning nav -->
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/"tabindex="2">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
     <ul id="breadcrumb" >
-      <li><a href="/">Home</a></li>
+      <li><a href="/" tabindex="3">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
     <!-- End nav -->
@@ -33,12 +33,12 @@
   <!-- Beginning main -->
   <main id="maincontent">
     <!-- Beginning map -->
-    <section id="map-container" role="application" aria-label="Mapbox Maps">
+    <section id="map-container" role="application" aria-label="Mapbox Maps" tabindex="4">
       <div id="map" aria-labelledby="map-container"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
-    <section id="restaurant-container" role="contentinfo" aria-label="Restaurant Information">
+    <section id="restaurant-container" role="contentinfo" aria-label="Restaurant Information" tabindex="5">
       <h1 id="restaurant-name"></h1>
       <img id="restaurant-img">
       <p id="restaurant-cuisine"></p>
@@ -47,7 +47,7 @@
     </section>
     <!-- end restaurant -->
     <!-- Beginning reviews -->
-    <section id="reviews-container" role="contentinfo" aria-label="Restaurant Reviews">
+    <section id="reviews-container" role="contentinfo" aria-label="Restaurant Reviews" tabindex="6">
       <ul id="reviews-list"></ul>
     </section>
     <!-- End reviews -->
