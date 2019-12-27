@@ -11,8 +11,8 @@
   <title>Restaurant Reviews</title>
 </head>
 
-<body>
-  <header class="col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3 order-0">
+<body class="box">
+  <header>
   	<a href="#filter-options" class="skip-link" tabindex="1"> Skip to main content</a>
     <nav>
       <h1><a href="/" tabindex="2">Restaurant Reviews</a></h1>
@@ -20,10 +20,10 @@
   </header>
 
   <main id="maincontent" >
-    <section id="map-container" role="application" aria-label="Mapbox Maps" tabindex="3" class="col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3 order-1">
+    <section id="map-container" role="application" aria-label="Mapbox Maps" tabindex="3">
     <div id ="map" aria-labelledby="map-container"></div>
     </section>
-    <section role="contentinfo" aria-label="Restaurants Found In Your Area" tabindex="4" class="col-10 col-sm-8 col-md-6 col-lg-3 col-xl-3 order-2"">
+    <section role="contentinfo" aria-label="Restaurants Found In Your Area" tabindex="4">
       <div id="filter-options" class="filter-options">
         <h2>Filter Results</h2>
         <select aria-label="Filter By Neighborhood" aria-controls="restaurants-list" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" tabindex="5">
