@@ -1,12 +1,13 @@
 @charset "utf-8";
 /* CSS Document */
-.box {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
+.flex-container{
+display: -webkit-flex;
+display: flex;
+}
+
+.main {
+  flex: 33.3%;
+  padding: 7%;
 }
 
 body,td,th,p{
@@ -15,6 +16,7 @@ body,td,th,p{
 	color: #333;
 	line-height: 1.5;
 }
+
 body {
 	background-color: #fdfdfd;
 	margin: 0;
